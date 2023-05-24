@@ -1,23 +1,32 @@
 <template>
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Example Component</div>
-
-                    <div class="card-body">
-                        I'm an example component.
-                    </div>
-                </div>
-            </div>
-        </div>
+        <h3>name: {{name}}</h3>
+        <Post></Post>
     </div>
 </template>
 
 <script>
-    export default {
-        mounted() {
-            console.log('Component mounted.')
+import Post from "@/components/Post.vue";
+import {defineComponent} from "vue";
+import data from "bootstrap/js/src/dom/data.js";
+
+export default defineComponent({
+    components: {Post},
+
+    data: function () {
+        return {
+            name: 'alex'
         }
-    }
+    },
+
+
+
+
+
+
+})
+
+
+
+
 </script>

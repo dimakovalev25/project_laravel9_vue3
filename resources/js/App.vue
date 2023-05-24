@@ -2,6 +2,7 @@
 <template>
     <!-- Типо template -->
     <div id="app">
+        <example-component></example-component>
         <!-- Навигация -->
         <nav class="flex flex-wrap">
             <router-link
@@ -28,7 +29,9 @@
 
 <script>
 import { ref } from 'vue';
+import ExampleComponent from "@/components/ExampleComponent.vue";
 export default {
+    components: {ExampleComponent},
     setup() {
         const count = ref(0);
         return {
