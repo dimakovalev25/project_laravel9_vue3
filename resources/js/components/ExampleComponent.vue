@@ -1,6 +1,7 @@
 <template>
     <div class="container">
         <h3>name: {{name}}</h3>
+        <button @click="say">hello</button>
         <Post></Post>
     </div>
 </template>
@@ -16,6 +17,12 @@ export default defineComponent({
     data: function () {
         return {
             name: 'alex'
+        }
+    },
+
+    methods: {
+        say(){
+            console.log('hello')
         }
     },
 
