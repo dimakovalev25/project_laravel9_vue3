@@ -1,45 +1,31 @@
 
 <template>
-    <!-- Типо template -->
     <div id="app">
-        <example-component></example-component>
-        <!-- Навигация -->
         <nav class="flex flex-wrap">
-            <router-link
-                :to="'/'"
-            >
-                Главная
-            </router-link>
-
-            <router-link
-                :to="'/about'"
-            >
-                О нас
-            </router-link>
+<!--            <router-link-->
+<!--                :to="'/'"-->
+<!--            >-->
+<!--                home-->
+<!--            </router-link>-->
+<!--            <router-link-->
+<!--                :to="'/about'"-->
+<!--            >-->
+<!--                about-->
+<!--            </router-link>-->
         </nav>
+<!--        <router-view />-->
+        <example-component></example-component>
 
-        <!-- Контент страницы -->
-        <router-view />
 
-        <div>
-            <button @click="count++">{{ count }}</button>
-        </div>
     </div>
 </template>
 
 <script>
 import { ref } from 'vue';
 import ExampleComponent from "@/components/ExampleComponent.vue";
+import Post from "@/components/Post.vue";
 export default {
-    components: {ExampleComponent},
-    setup() {
-        const count = ref(0);
-        return {
-            count
-        }
-    },
-    mounted() {
-        console.log(this.count);
-    }
+    components: {Post, ExampleComponent},
+
 }
 </script>

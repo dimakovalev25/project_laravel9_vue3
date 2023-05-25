@@ -1,7 +1,11 @@
 <template>
     <div class="container">
-        <h3>name: {{name}}</h3>
-        <button @click="say">hello</button>
+        <div v-for="person in persons">
+            <h3>{{person.name}}</h3>
+            <h3>{{person.age}}</h3>
+
+        </div>
+        <!--        <button @click="say">hello</button>-->
         <Post></Post>
     </div>
 </template>
@@ -16,24 +20,32 @@ export default defineComponent({
 
     data: function () {
         return {
-            name: 'alex'
+            persons: [
+                {
+                    name: 'jo',
+                    age: 22
+                },
+                {
+                    name: 'alex',
+                    age: 25
+                },
+                {
+                    name: 'john',
+                    age: 22
+                },
+
+            ]
         }
     },
 
     methods: {
-        say(){
+        say() {
             console.log('hello')
         }
     },
 
 
-
-
-
-
 })
-
-
 
 
 </script>
