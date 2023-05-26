@@ -14,7 +14,8 @@
 <!--            </router-link>-->
         </nav>
 <!--        <router-view />-->
-        <example-component></example-component>
+<!--        <example-component></example-component>-->
+        <create-component></create-component>
 
 
     </div>
@@ -24,8 +25,9 @@
 import { ref } from 'vue';
 import ExampleComponent from "@/components/ExampleComponent.vue";
 import Post from "@/components/Post.vue";
+import CreateComponent from "@/components/CreateComponent.vue";
 export default {
-    components: {Post, ExampleComponent},
+    components: {CreateComponent, Post, ExampleComponent},
 
 }
 </script>
