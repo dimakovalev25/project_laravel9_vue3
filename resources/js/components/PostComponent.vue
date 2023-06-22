@@ -1,46 +1,49 @@
 <template>
     <div class="container">
-        <SinglePostComponent></SinglePostComponent>
-        <h3>
-            post component
-        </h3>
-        <h3>
-            number: {{ number }}
-        </h3>
+        <!--        <SinglePostComponent></SinglePostComponent>-->
+        <!--        <h3>-->
+        <!--            number: {{ number }}-->
+        <!--        </h3>-->
         <!--        <h5>{{ getdata }}</h5>-->
-        <button @click="sayHi">say hi</button>
+        <!--        <button @click="sayHi">say hi</button>-->
         <!--        <button @click="sayHello">say hello</button>-->
-        <button @click="plus1">plus1</button>
+        <!--        <button @click="plus1">plus1</button>-->
 
-        <table class="table">
-            <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Name</th>
-                <th scope="col">Age</th>
-            </tr>
-            </thead>
-            <tbody>
-            <template v-for="user in persons">
-                <tr>
-                    <th scope="row">{{ user.id }}</th>
-                    <td>{{ user.name }}</td>
-                    <td>{{ user.age }}</td>
-                </tr>
-            </template>
-            </tbody>
-        </table>
-
-    <create-component></create-component>
+        <!--        <table class="table">-->
+        <!--            <thead>-->
+        <!--            <tr>-->
+        <!--                <th scope="col">#</th>-->
+        <!--                <th scope="col">Name</th>-->
+        <!--                <th scope="col">Age</th>-->
+        <!--            </tr>-->
+        <!--            </thead>-->
+        <!--            <tbody>-->
+        <!--            <template v-for="user in persons">-->
+        <!--                <tr>-->
+        <!--                    <th scope="row">{{ user.id }}</th>-->
+        <!--                    <td>{{ user.name }}</td>-->
+        <!--                    <td>{{ user.age }}</td>-->
+        <!--                </tr>-->
+        <!--            </template>-->
+        <!--            </tbody>-->
+        <!--        </table>-->
+        <br>
+        <br>
+        <create-component></create-component>
+        <br>
+        <br>
+        <index-component></index-component>
     </div>
 </template>
 
 <script>
 import SinglePostComponent from "@/components/SinglePostComponent.vue";
 import CreateComponent from "@/components/CreateComponent.vue"
+import IndexComponent from "@/components/IndexComponent.vue";
 
 export default {
     components: {
+        IndexComponent,
         CreateComponent,
         SinglePostComponent
     },
@@ -112,9 +115,7 @@ export default {
                 .catch(error => {
 
                 })
-                .finally({
-
-                })
+                .finally({})
         },
 
         sayHi() {
