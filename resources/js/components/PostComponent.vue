@@ -1,20 +1,26 @@
 <template>
     <div>
+        <single-post-component></single-post-component>
         <h3>
             post component
         </h3>
-        <div v-for="person in persons">
-            <h3>{{person.name}}</h3>
-            <h3>{{person.age}}</h3>
 
-        </div>
+        <button @click="sayHi">say hi</button>
+<!--        <div v-for="person in persons">-->
+<!--            <h3>{{person.name}}</h3>-->
+<!--            <h3>{{person.age}}</h3>-->
+<!--        </div>-->
     </div>
 </template>
 
 <script>
+import SinglePostComponent from "@/components/SinglePostComponent.vue";
 export default {
-    name: "Post",
+    components: {
+      SinglePostComponent
+    },
 
+    name: "PostComponent",
 
     data() {
         return {
@@ -26,7 +32,6 @@ export default {
         this.getPersons()
 
     },
-
 
     methods: {
         getPosts() {
@@ -49,11 +54,13 @@ export default {
                     // console.log(data);
                     this.persons = data.data
                 })
+        },
+
+        sayHi(){
+            console.log('hi!!!!!!!!');
         }
     }
 }
-
-
 </script>
 
 <style scoped>

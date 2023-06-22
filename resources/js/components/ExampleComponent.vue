@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <div v-for="person in persons">
+        <div  v-for="person in personAge">
             <h3>{{person.name}}</h3>
             <h3>{{person.age}}</h3>
 
@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import Post from "@/components/Post.vue";
+import Post from "@/components/PostComponent.vue";
 import {defineComponent} from "vue";
 import data from "bootstrap/js/src/dom/data.js";
 
@@ -43,6 +43,14 @@ export default defineComponent({
             console.log('hello')
         }
     },
+
+    computed: {
+        personAge() {
+            return this.persons.filter(function (item) {
+                return item.age > 22
+            })
+        }
+    }
 
 
 })

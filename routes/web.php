@@ -8,9 +8,7 @@ Route::get('/', function () {
 });
 
 Route::get('/posts', \App\Http\Controllers\PostController::class);
-
 Route::get('/persons', \App\Http\Controllers\PersonController::class);
-
 //Route::post('/persons/post', \App\Http\Controllers\Person\StoreController::class);
 
 

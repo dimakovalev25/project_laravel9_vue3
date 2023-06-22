@@ -1,22 +1,8 @@
-
 <template>
     <div id="app">
-        <nav class="flex flex-wrap">
-<!--            <router-link-->
-<!--                :to="'/'"-->
-<!--            >-->
-<!--                home-->
-<!--            </router-link>-->
-<!--            <router-link-->
-<!--                :to="'/about'"-->
-<!--            >-->
-<!--                about-->
-<!--            </router-link>-->
-        </nav>
-<!--        <router-view />-->
 <!--        <example-component></example-component>-->
-        <create-component></create-component>
-
+<!--        <create-component></create-component>-->
+       <post-component></post-component>
 
     </div>
 </template>
@@ -24,10 +10,11 @@
 <script>
 import { ref } from 'vue';
 import ExampleComponent from "@/components/ExampleComponent.vue";
-import Post from "@/components/Post.vue";
+import Post from "@/components/PostComponent.vue";
 import CreateComponent from "@/components/CreateComponent.vue";
+import PostComponent from "@/components/PostComponent.vue";
 export default {
-    components: {CreateComponent, Post, ExampleComponent},
+    components: {PostComponent, CreateComponent, ExampleComponent},
 
 }
 </script>
