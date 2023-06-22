@@ -3,11 +3,13 @@
         <SinglePostComponent></SinglePostComponent>
         <h3>
             post component
-            {{ number }}
         </h3>
-        <h5>{{ getdata }}</h5>
+        <h3>
+            number: {{ number }}
+        </h3>
+        <!--        <h5>{{ getdata }}</h5>-->
         <button @click="sayHi">say hi</button>
-        <button @click="sayHello">say hello</button>
+        <!--        <button @click="sayHello">say hello</button>-->
         <button @click="plus1">plus1</button>
 
         <table class="table">
@@ -19,8 +21,8 @@
             </tr>
             </thead>
             <tbody>
-            <template v-for="user in users">
-                <tr v-if="user.age > 40">
+            <template v-for="user in persons">
+                <tr>
                     <th scope="row">{{ user.id }}</th>
                     <td>{{ user.name }}</td>
                     <td>{{ user.age }}</td>
@@ -29,14 +31,17 @@
             </tbody>
         </table>
 
+    <create-component></create-component>
     </div>
 </template>
 
 <script>
 import SinglePostComponent from "@/components/SinglePostComponent.vue";
+import CreateComponent from "@/components/CreateComponent.vue"
 
 export default {
     components: {
+        CreateComponent,
         SinglePostComponent
     },
 
@@ -45,12 +50,19 @@ export default {
     computed: {
         getdata() {
             return 'test data'
+        },
+
+        usersAgeMore() {
+            return this.users.filter(function (users) {
+                return users.age < 40
+            })
         }
     },
 
     data() {
         return {
             number: 44,
+            persons: [],
             users: [
                 {
                     name: 'jo',
@@ -96,6 +108,12 @@ export default {
                 .then(data => {
                     // console.log(data);
                     this.persons = data.data
+                })
+                .catch(error => {
+
+                })
+                .finally({
+
                 })
         },
 

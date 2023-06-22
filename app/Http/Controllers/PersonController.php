@@ -11,20 +11,21 @@ class PersonController extends Controller
         $persons = [
             [
                 'id' => 1,
-                'name' => 'jo',
-                'age' => 33
+                'name' => 'person1',
+                'age' => 99
             ],
             [
                 'id' => 2,
-                'name' => 'john',
+                'name' => 'amrabat',
                 'age' => 33
             ],
             [
                 'id' => 3,
-                'name' => 'alex',
+                'name' => 'garry',
                 'age' => 33
             ]
         ];
+
         return $persons;
     }
 }
