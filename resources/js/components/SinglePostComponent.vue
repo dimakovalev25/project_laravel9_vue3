@@ -1,12 +1,29 @@
 <template>
-<div>
-    single post
-</div>
+    <div>
+        single post
+    </div>
 </template>
 
 <script>
 export default {
-    name: "SinglePost"
+    name: "SinglePost",
+
+    data() {
+        return {
+            name: 'single_post'
+        }
+    },
+
+    mounted() {
+        this.$parent.parentLog();
+
+    },
+
+    methods: {
+        log() {
+            console.log('single_component')
+        }
+    }
 }
 </script>
 

@@ -4,6 +4,8 @@
         <create-component></create-component>
         <br>
         <index-component></index-component>
+        <br>
+        <single-post-component ref="ref"></single-post-component>
     </div>
 </template>
 
@@ -18,6 +20,17 @@ export default {
         CreateComponent,
         SinglePostComponent
     },
+
+    mounted() {
+        console.log(this.$refs.ref.log())
+
+    },
+
+    methods: {
+      parentLog(){
+          console.log('parent_log!!!')
+      }
+    }
 }
 </script>
 
