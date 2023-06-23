@@ -1,10 +1,16 @@
 <template>
 
     <div>
-        <input type="text" v-model="name" placeholder="name">
-        <input type="number" v-model="age"  placeholder="age">
-        <input type="text" v-model="job" placeholder="job">
-        <button @click.prevent="addPerson" type="submit">add person</button>
+        <input class="form-control w-25" type="text" v-model="name" placeholder="name">
+        <br>
+        <input class="form-control w-25" type="number" v-model="age"  placeholder="age">
+        <br>
+        <input class="form-control w-25" type="text" v-model="job" placeholder="job">
+        <br>
+        <button class="btn btn-success" @click.prevent="addPerson" >add person</button>
+        <br>
+        <hr>
+
     </div>
 
 </template>
