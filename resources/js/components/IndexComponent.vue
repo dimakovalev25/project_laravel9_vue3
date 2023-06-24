@@ -1,5 +1,6 @@
 <template>
-    <div>
+    <div class="container">
+        <create-component></create-component>
         <table class="table">
             <thead>
             <tr>
@@ -52,9 +53,14 @@
 
 <script>
 import data from "bootstrap/js/src/dom/data.js";
+import CreateComponent from "@/components/CreateComponent.vue"
 
 export default {
     name: "IndexComponent",
+
+    components: {
+        CreateComponent
+    },
 
 
     data() {

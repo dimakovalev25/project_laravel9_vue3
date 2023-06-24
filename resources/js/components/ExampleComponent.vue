@@ -14,10 +14,8 @@
 import Post from "@/components/PostComponent.vue";
 import {defineComponent} from "vue";
 import data from "bootstrap/js/src/dom/data.js";
-
 export default defineComponent({
     components: {Post},
-
     data: function () {
         return {
             persons: [
@@ -33,17 +31,14 @@ export default defineComponent({
                     name: 'john',
                     age: 22
                 },
-
             ]
         }
     },
-
     methods: {
         say() {
             console.log('hello')
         }
     },
-
     computed: {
         personAge() {
             return this.persons.filter(function (item) {
@@ -51,9 +46,5 @@ export default defineComponent({
             })
         }
     }
-
-
 })
-
-
 </script>

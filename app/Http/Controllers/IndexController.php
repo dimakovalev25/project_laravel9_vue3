@@ -3,12 +3,10 @@
 namespace App\Http\Controllers;
 
 
-class PostController extends Controller
+class IndexController extends Controller
 {
     public function __invoke()
     {
-
-        return 'post';
-
+        return view('index');
     }
 }

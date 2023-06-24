@@ -27,6 +27,12 @@ export default {
         }
     },
 
+    mounted() {
+      this.$parent.getPeople()
+    },
+
+
+
     methods: {
         addPerson() {
             axios.post('/api/people', {name: this.name, age: this.age, job: this.job })
@@ -35,6 +41,7 @@ export default {
                     this.age = null
                     this.job = null
                     // console.log(res);
+                    this.$parent.getPeople()
                 })
         }
     }
