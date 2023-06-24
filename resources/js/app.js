@@ -3,8 +3,6 @@ import {createApp} from 'vue';
 import * as VueRouter from 'vue-router';
 import Home from './pages/Home.vue'
 import About from './pages/About.vue'
-import IndexComponent from "@/components/IndexComponent.vue";
-
 
 const routes = [
     {
@@ -20,7 +18,7 @@ const routes = [
     {
         path: '/persons',
         name: 'persons',
-        component: IndexComponent
+        component: () => import('./components/IndexComponent.vue'),
     },
 ]
 
