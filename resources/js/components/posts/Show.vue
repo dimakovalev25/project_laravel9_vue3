@@ -1,6 +1,7 @@
 <template>
     <div>
         show post component
+        <p>----------{{test}}------------</p>
         <br>
         <router-link :to="{name: 'posts.create'}">create new post</router-link>
         <br>
@@ -22,6 +23,7 @@
 
 <script>
 
+
 import router from "@/router.js";
 
 
@@ -29,12 +31,15 @@ export default {
     name: "ShowPostComponent",
 
     mounted() {
+        // this.$store.dispatch('getPosts')
         this.getPosts()
+        console.log(this.$store.state.Post.test)
     },
 
     data() {
         return {
             posts: [],
+            test: this.$store.state.Post.test
         }
     },
 
