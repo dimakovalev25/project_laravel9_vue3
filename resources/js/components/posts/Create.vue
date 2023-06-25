@@ -7,7 +7,7 @@
             <textarea class="form-control" v-model="content" type="text" placeholder="content"/>
         </div>
         <div class="w-50">
-            <button @click.prevent="addPost" type="submit" class="btn btn-success">add</button>
+            <button :disabled="!isDisabled" @click.prevent="addPost" type="submit" class="btn btn-success">add</button>
         </div>
     </div>
 </template>
@@ -20,8 +20,14 @@ export default {
 
     data() {
         return {
-            title: '',
-            content: ''
+            title: null,
+            content: null
+        }
+    },
+
+    computed: {
+        isDisabled() {
+            return this.title && this.content
         }
     },
 

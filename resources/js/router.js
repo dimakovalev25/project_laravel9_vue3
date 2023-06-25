@@ -28,6 +28,11 @@ const router = VueRouter.createRouter({
             path: '/posts/create',
             name: 'posts.create',
             component: () => import('./components/posts/Create.vue'),
+        },
+        {
+            path: '/posts/:id/edit',
+            name: 'posts.edit',
+            component: () => import('./components/posts/Edit.vue')
         }
     ]
 
