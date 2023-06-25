@@ -1,5 +1,4 @@
 <template>
-
     <div>
         <input class="form-control w-25" type="text" v-model="name" placeholder="name">
         <br>
@@ -10,12 +9,13 @@
         <button class="btn btn-success" @click.prevent="addPerson" >add person</button>
         <br>
         <hr>
-
     </div>
 
 </template>
 
 <script>
+import router from "@/router.js";
+
 export default {
     name: "CreateComponent",
 
@@ -42,6 +42,9 @@ export default {
                     this.job = null
                     // console.log(res);
                     this.$parent.getPeople()
+
+                    router.push({name: 'home'})
+
                 })
         }
     }

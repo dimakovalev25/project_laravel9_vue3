@@ -52,6 +52,7 @@
 </template>
 
 <script>
+
 import data from "bootstrap/js/src/dom/data.js";
 import CreateComponent from "@/components/CreateComponent.vue"
 
