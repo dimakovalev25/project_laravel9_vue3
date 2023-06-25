@@ -43,7 +43,7 @@ export default {
                     // console.log(res);
                     this.$parent.getPeople()
 
-                    router.push({name: 'home'})
+                    // router.push({name: 'home'})
 
                 })
         }

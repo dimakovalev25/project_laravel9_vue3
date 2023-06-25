@@ -18,6 +18,17 @@ const router = VueRouter.createRouter({
             name: 'persons',
             component: () => import('./components/IndexComponent.vue'),
         },
+        {
+            path: '/posts',
+            name: 'posts',
+            component: () => import('./components/posts/Show.vue'),
+        }
+        ,
+        {
+            path: '/posts/create',
+            name: 'posts.create',
+            component: () => import('./components/posts/Create.vue'),
+        }
     ]
 
 })
