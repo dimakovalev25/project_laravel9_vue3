@@ -1,7 +1,6 @@
 <template>
     <div>
         show post component
-        <p>----------{{test}}------------</p>
         <br>
         <router-link :to="{name: 'posts.create'}">create new post</router-link>
         <br>
@@ -31,33 +30,33 @@ export default {
     name: "ShowPostComponent",
 
     mounted() {
-        // this.$store.dispatch('getPosts')
-        this.getPosts()
-        console.log(this.$store.state.Post.test)
+         this.$store.dispatch('getPosts')
     },
 
-    data() {
-        return {
-            posts: [],
-            test: this.$store.state.Post.test
-        }
+    computed:{
+      posts(){
+          return this.$store.getters.posts
+      }
     },
 
     methods: {
-        getPosts() {
-            axios.get('/api/post')
-                .then(res => {
-                    this.posts = res.data
-                })
-        },
+
+        // getPosts() {
+        //     axios.get('/api/post')
+        //         .then(res => {
+        //             this.posts = res.data
+        //         })
+        // },
 
         deletePost(id){
             axios.delete('/api/post/'+id)
                 .then(res=> {
-                    this.getPosts()
+                    // this.getPosts()
                     // router.push({name: 'posts'})
+                    this.$store.dispatch('getPosts')
                 })
         },
+
 
     }
 
